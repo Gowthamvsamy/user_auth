@@ -8,6 +8,8 @@ const { createDbConnection } = require("./dbConnection");
 //Environment variables
 require('dotenv').config();
 
+console.log('Environment MONGO_URI:', process.env.MONGO_URI);
+
 // Create a database connection
 createDbConnection();
 
@@ -20,7 +22,7 @@ APIServer.use(express.json());
 //controllers injections
 APIServer.get('/', function (req, res) {
     return res.status(200).json({
-        message: `Welcome to my user API \n 1) Register the user first i) userName ii) email iii) password \n 2) Login the user \n 3) view the user i) use token to get particular user ii) use '/all' to get all users` ,
+        message: `Welcome to my user API \n 1) Register the user first i) userName ii) email iii) password \n 2) Login the user \n 3) view the user i) use token to get particular user ii) use '/all' to get all users`,
     });
 });
 APIServer.use("/users", userController);
