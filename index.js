@@ -1,3 +1,6 @@
+//Environment variables
+require('dotenv').config();
+
 // import packages
 const express = require("express");
 const userController = require("./controllers/user.controller");
@@ -5,10 +8,7 @@ const authController = require("./controllers/auth.controller");
 const { validateToken } = require("./middleware/auth.middleware");
 const registerController = require("./controllers/register.controller");
 const { createDbConnection } = require("./dbConnection");
-//Environment variables
-require('dotenv').config();
 
-console.log('Environment MONGO_URI:', process.env.MONGO_URI);
 
 // Create a database connection
 createDbConnection();
