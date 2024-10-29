@@ -9,18 +9,10 @@ const { createDbConnection } = require("./dbConnection");
 require('dotenv').config();
 
 // Create a database connection
-createDbConnection()
-    .then(() => {
-        console.log('Connected to MongoDB');
-    })
-    .catch(error => {
-        console.error('Failed to connect to MongoDB', error);
-    });
+createDbConnection();
 
 //Create a API server
 const APIServer = express();
-
-
 
 //passing incoming request body as a json
 APIServer.use(express.json());
