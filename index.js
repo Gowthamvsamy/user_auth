@@ -5,6 +5,8 @@ const authController = require("./controllers/auth.controller");
 const { validateToken } = require("./middleware/auth.middleware");
 const registerController = require("./controllers/register.controller");
 const { createDbConnection } = require("./dbConnection");
+//Environment variables
+require('dotenv').config();
 
 // Create a database connection
 createDbConnection()
@@ -18,8 +20,7 @@ createDbConnection()
 //Create a API server
 const APIServer = express();
 
-//Environment variables
-require('dotenv').config();
+
 
 //passing incoming request body as a json
 APIServer.use(express.json());
